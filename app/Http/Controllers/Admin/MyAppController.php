@@ -11,5 +11,10 @@ class MyAppController extends Controller
   {
       return view('admin.app.create');
   }
-
+  // 以下を追記
+    public function create(Request $request)
+    {
+        // admin/news/createにリダイレクトする
+        return redirect('admin/app/create');
+    }
 }

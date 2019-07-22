@@ -23,6 +23,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('app/create', 'Admin\MyAppController@add')->middleware('auth');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::get('app/create', 'Admin\MyAppController@add');
+     Route::post('app/create', 'Admin\MyAppController@create'); # 追記
 });
