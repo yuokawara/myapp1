@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function() {
     Route::get('app/create', 'Admin\MyAppController@add');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('app/create', 'Admin\MyAppController@add')->middleware('auth');
+});
