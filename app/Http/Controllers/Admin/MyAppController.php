@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-// 以下を追記することでNews Modelが扱えるようになる
+// 以下を追記することでApp Modelが扱えるようになる
 use App\App;
 
 class MyAppController extends Controller
@@ -23,7 +23,7 @@ class MyAppController extends Controller
       $app = new App;
       $form = $request->all();
 
-      // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+      // フォームから画像が送信されてきたら、保存して、$app->image_path に画像のパスを保存する
       if (isset($form['image'])) {
         $path = $request->file('image')->store('public/image');
         $app->image_path = basename($path);
