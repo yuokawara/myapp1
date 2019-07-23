@@ -27,3 +27,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('app/create', 'Admin\MyAppController@add');
      Route::post('app/create', 'Admin\MyAppController@create'); # 追記
 });
+/*---- 動画配信用のテストコード ----*/
+// Route::get('video/stream', 'VideoController@stream');
