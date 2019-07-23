@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class App extends Model
 {
+    protected $table = 'app';
     protected $guarded = array('id');
 
     // 以下を追記
