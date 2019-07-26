@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('app/create', 'Admin\MyAppController@add');
-});
+// Route::group(['prefix' => 'admin'], function() {
+//     Route::get('app/create', 'Admin\MyAppController@add');
+// });
 
 Auth::routes();
 
