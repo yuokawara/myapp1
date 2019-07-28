@@ -27,9 +27,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('app/create', 'Admin\MyAppController@add');
      Route::post('app/create', 'Admin\MyAppController@create');
      Route::get('app', 'Admin\MyAppController@index');
-     Route::get('news/edit', 'Admin\MyAppController@edit');
-     Route::post('news/edit', 'Admin\MyAppController@update');
-
+     Route::get('app/edit', 'Admin\MyAppController@edit');
+     Route::post('app/edit', 'Admin\MyAppController@update');
+     Route::get('app/delete', 'Admin\MyAppController@delete');
 });
 /*---- 動画配信用のテストコード ----*/
 // Route::get('video/stream', 'VideoController@stream');

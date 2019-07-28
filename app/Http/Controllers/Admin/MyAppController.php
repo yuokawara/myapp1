@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 // 以下を追記することでApp Modelが扱えるようになる
 use App\App;
+use App\AppHistory;
+use Carbon\Carbon;
 
 class MyAppController extends Controller
 {
@@ -67,12 +69,12 @@ class MyAppController extends Controller
       return view('admin.app.edit', ['app_form' => $app]);
   }
 
-
+      // Update
   public function update(Request $request)
   {
       // Validationをかける
       $this->validate($request, App::$rules);
-      // News Modelからデータを取得する
+      // App Modelからデータを取得する
       $app = App::find($request->id);
       // 送信されてきたフォームデータを格納する
       $app_form = $request->all();
@@ -88,7 +90,22 @@ class MyAppController extends Controller
 
       // 該当するデータを上書きして保存する
       $app->fill($app_form)->save();
+      // 以下を追記
+        $app_histories = new AppHistory;
+        $app_histories->app_id = $app->id;
+        $app_histories->edited_at = Carbon::now();
+        $app_histories->save();
+
 
       return redirect('admin/app');
+  }
+  // 以下を追記
+  public function delete(Request $request)
+  {
+      // 該当するApp Modelを取得
+      $app = App::find($request->id);
+      // 削除する
+      $app->delete();
+      return redirect('admin/app/');
   }
 }

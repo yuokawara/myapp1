@@ -40,6 +40,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $app_form->id }}">
@@ -48,6 +49,19 @@
                         </div>
                     </div>
                 </form>
+                {{-- 以下を追記 --}}
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <h2>編集履歴</h2>
+                        <ul class="list-group">
+                            @if ($app_form->app_histories != NULL)
+                                @foreach ($app_form->app_histories as $app_history)
+                                    <li class="list-group-item">{{ $app_history->edited_at }}</li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

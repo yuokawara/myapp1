@@ -14,4 +14,12 @@ class App extends Model
         'title' => 'required',
         'body' => 'required',
     );
+
+    // 以下を追記
+    // Appモデルに関連付けを行う
+    public function app_histories()
+    {
+      return $this->hasMany('App\AppHistory');
+
+    }
 }

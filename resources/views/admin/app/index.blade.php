@@ -33,7 +33,8 @@
                             <tr>
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
-                                <th width="50%">本文</th>
+                                <th width="30%">本文</th>
+                                <th width="30%">動画</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -43,9 +44,38 @@
                                     <th>{{ $app->id }}</th>
                                     <td>{{ str_limit($app->title, 100) }}</td>
                                     <td>{{ str_limit($app->body, 250) }}</td>
+
+                                    <td><video id="mv-{{ $app->id}}" class="col-6" autobuffer>
+                                      <source src="movie/dog.mov">
+                                        <source src="movie/dog.ogv">
+                                          <p>HTML5に対応していません。</p>
+                                        </video>
+                                        <form>
+                                          <button type ="button" onclick="movplay(0)">再生</button>
+                                          <button type="button" onclick="movplay(1)">一時停止</button>
+                                        </form>
+                                        <script>
+                                        function movplay(num)
+                                        {
+                                          var obj = document.getElementById("mv-{{$app->id}}");
+                                          var n = parseInt(num);
+                                          if ( n == 0 )
+                                          {
+                                            obj.play();
+                                          }
+                                          else
+                                          {
+                                            obj.pause();
+                                          }
+                                        }
+                                      </script>
+                                    </td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\MyAppController@edit', ['id' => $app->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\MyAppController@delete', ['id' => $app->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>
