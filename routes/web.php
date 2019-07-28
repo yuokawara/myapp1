@@ -26,7 +26,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('app/create', 'Admin\MyAppController@add');
      Route::post('app/create', 'Admin\MyAppController@create');
-     Route::get('app', 'Admin\MyAppController@index')->middleware('auth'); // 追記
+     Route::get('app', 'Admin\MyAppController@index');
+     Route::get('news/edit', 'Admin\MyAppController@edit');
+     Route::post('news/edit', 'Admin\MyAppController@update');
 
 });
 /*---- 動画配信用のテストコード ----*/

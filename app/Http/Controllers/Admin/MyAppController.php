@@ -50,9 +50,45 @@ class MyAppController extends Controller
             // 検索されたら検索結果を取得する
             $posts = App::where('title', $cond_title)->get();
         } else {
-            // それ以外はすべてのニュースを取得する
+            // それ以外はすべての投稿を取得する
             $posts = App::all();
         }
         return view('admin.app.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
+    // 以下を追記
+
+  public function edit(Request $request)
+  {
+      // News Modelからデータを取得する
+      $app = App::find($request->id);
+      if (empty($app)) {
+        abort(404);
+      }
+      return view('admin.app.edit', ['app_form' => $app]);
+  }
+
+
+  public function update(Request $request)
+  {
+      // Validationをかける
+      $this->validate($request, App::$rules);
+      // News Modelからデータを取得する
+      $app = App::find($request->id);
+      // 送信されてきたフォームデータを格納する
+      $app_form = $request->all();
+      if (isset($app_form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $app->image_path = basename($path);
+        unset($app_form['image']);
+      } elseif (0 == strcmp($request->remove, 'true')) {
+        $app->image_path = null;
+      }
+      unset($app_form['_token']);
+      unset($app_form['remove']);
+
+      // 該当するデータを上書きして保存する
+      $app->fill($app_form)->save();
+
+      return redirect('admin/app');
+  }
 }
