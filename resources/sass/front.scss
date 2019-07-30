@@ -1,11 +1,12 @@
 body {
   color: #000;
+  background-color: #e6c289;
 }
 
 .header {
   .logo {
-      width: 120px;
-      height: 82px;
+    width: 120px;
+    height: 82px;
   }
 }
 
@@ -15,7 +16,7 @@ body {
     width: 350px;
     .image {
       img {
-    width: 100%;
+        width: 100%;
       }
     }
     .title {
@@ -25,8 +26,8 @@ body {
       left: 0;
       background-color: rgba(0, 0, 0, 0.6);
       h1 {
-    color: #fff;
-    font-size: 1.2em;
+        color: #efefef;
+        font-size: 1.2em;
       }
     }
     .body {
@@ -50,7 +51,7 @@ body {
     }
     .image {
       img {
-    width: 250px;
+        width: 250px;
       }
     }
   }

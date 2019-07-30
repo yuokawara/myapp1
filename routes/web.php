@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      Route::get('app/edit', 'Admin\MyAppController@edit');
      Route::post('app/edit', 'Admin\MyAppController@update');
      Route::get('app/delete', 'Admin\MyAppController@delete');
+     Route::get('/', 'MyAppController@index');
 });
 /*---- 動画配信用のテストコード ----*/
 // Route::get('video/stream', 'VideoController@stream');
