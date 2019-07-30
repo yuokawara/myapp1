@@ -5,26 +5,24 @@
         <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
-                <div class="headline col-md-10 mx-auto">
+                <div class="headline col-md-6">
                     <div class="row">
-                        <div class="col-md-6">
+
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
-                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+                                        <img src="{{ $headline->image_path }}">
                                     @endif
                                 </div>
                                 <div class="title p-2">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
-                        </div>
-                        <tbody>
-                            @foreach($posts as $app)
-                              <div class="movie col-md--6 text-right mt-4">
+
+                        <div class="movie col-md-6 mt-4">
+                          <tbody>
+                              @foreach($posts as $app)
                                   <tr>
                                     <td><video id="mv-{{$app->id}}" class="col-10" autobuffer>
                                       <source src="movie/dog.mov">
@@ -52,9 +50,9 @@
                                       </script>
                                     </td>
                                   </tr>
-                              </div>
-                            @endforeach
-                        </tbody>
+                              @endforeach
+                          </tbody>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,14 +77,14 @@
 
                             <div class="image col-md-6 text-right mt-4">
                                 @if ($post->image_path)
-                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                                    <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
-                            <div class="movie col-md--6 text-right mt-4">
+                            <div class="movie col-md-12 text-right mt-4">
                               <tbody>
                                 @foreach($posts as $app)
                                     <tr>
-                                        <td><video id="mv-{{$app->id}}" class="col-10" autobuffer>
+                                        <td><video id="mv-{{$app->id}}" class="col-6" autobuffer>
                                           <source src="movie/dog.mov">
                                             <source src="movie/dog.ogv">
                                               <p>HTML5に対応していません。</p>
