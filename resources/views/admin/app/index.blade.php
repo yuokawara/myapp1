@@ -45,7 +45,7 @@
                                     <td>{{ str_limit($app->title, 100) }}</td>
                                     <td>{{ str_limit($app->body, 250) }}</td>
 
-                                    <td><video id="mv-{{ $app->id}}" class="col-6" autobuffer>
+                                    <td><video id="mv-{{$app->id}}" class="col-6" autobuffer>
                                       <source src="movie/dog.mov">
                                         <source src="movie/dog.ogv">
                                           <p>HTML5に対応していません。</p>

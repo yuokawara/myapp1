@@ -33,6 +33,12 @@
                             <input type="file" class="form-control-file" name="image">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="title">動画</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="movie">
+                        </div>
+                    </div>
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>
