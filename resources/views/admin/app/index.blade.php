@@ -54,7 +54,7 @@
                                           <button type ="button" onclick="movplay(0)">再生</button>
                                           <button type="button" onclick="movplay(1)">一時停止</button>
                                         </form>
-                                        <script>
+                                      <script>
                                         function movplay(num)
                                         {
                                           var obj = document.getElementById("mv-{{$app->id}}");

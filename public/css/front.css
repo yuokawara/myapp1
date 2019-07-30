@@ -3,6 +3,18 @@ body {
   background-color: #e6c289;
 }
 
+.navbar-laravel {
+  display: none;
+}
+
+.movie {
+  background-color: #efefef;
+}
+
+.image {
+  background-color: #efefef;
+}
+
 .header .logo {
   width: 120px;
   height: 82px;
