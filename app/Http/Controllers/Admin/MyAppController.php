@@ -63,7 +63,7 @@ class MyAppController extends Controller
 
   public function edit(Request $request)
   {
-      // News Modelからデータを取得する
+      // app Modelからデータを取得する
       $app = App::find($request->id);
       if (empty($app)) {
         abort(404);

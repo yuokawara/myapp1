@@ -40,7 +40,20 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="form-group row">
+                        <label class="col-md-2" for="image">動画</label>
+                        <div class="col-md-10">
+                            <input type="file" class="form-control-file" name="image">
+                            <div class="form-text text-info">
+                                設定中: {{ $app_form->image_path }}
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="remove" value="true">動画を削除
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $app_form->id }}">

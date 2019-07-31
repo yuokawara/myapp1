@@ -2,6 +2,11 @@ body {
   color: #000;
   background-color: #e6c289;
 }
+video {
+				width: 600px ;
+				max-width: 80% ;
+        background-color: #efefef;
+			}
 .navbar-laravel {
   display: none;
 }
