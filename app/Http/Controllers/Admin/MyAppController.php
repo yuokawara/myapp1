@@ -34,12 +34,20 @@ class MyAppController extends Controller
       } else {
           $app->image_path = null;
       }
+      // movie用保存
+      // if (isset($form['movie'])) {
+      //   $path = Storage::disk('s3')->putFile('/',$form['movie'],'public');
+      //   $app->movie = Storage::disk('s3')->url($path);
+      // } else {
+      //     $app->movie = null;
+      // }
+
 
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
       // フォームから送信されてきたimageを削除する
       unset($form['image']);
-
+      unset($form['movie']);
       // データベースに保存する
       $app->fill($form);
       $app->save();
@@ -87,6 +95,21 @@ class MyAppController extends Controller
       } elseif (0 == strcmp($request->remove, 'true')) {
         $app->image_path = null;
       }
+      // movie用
+      // Validationをかける
+      // $this->validate($request, App::$rules);
+      // // App Modelからデータを取得する
+      // $app = App::find($request->id);
+      // // 送信されてきたフォームデータを格納する
+      // $app_form = $request->all();
+      // if (isset($app_form['movie'])) {
+      //   $path = $request->file('movie')->store('public/movie');
+      //   $app->movie = basename($path);
+      //   unset($app_form['image']);
+      // } elseif (0 == strcmp($request->remove, 'true')) {
+      //   $app->movie = null;
+      // }
+
       unset($app_form['_token']);
       unset($app_form['remove']);
 
