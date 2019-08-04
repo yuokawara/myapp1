@@ -35,22 +35,22 @@
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                                    <input type="checkbox" class="form-check-input" name="remove-image" value="true">画像を削除
                                 </label>
                             </div>
                         </div>
                     </div>
                     <!-- movie -->
                     <div class="form-group row">
-                        <label class="col-md-2" for="image">動画</label>
+                        <label class="col-md-2" for="movie">動画</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="movie">
                             <div class="form-text text-info">
-                                設定中: {{ $app_form->movie }}
+                                設定中: {{ $app_form->movie_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="remove" value="true">動画を削除
+                                    <input type="checkbox" class="form-check-input" name="remove-movie" value="true">動画を削除
                                 </label>
                             </div>
                         </div>

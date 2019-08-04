@@ -35,11 +35,11 @@ class MyAppController extends Controller
           $app->image_path = null;
       }
       // movie用保存
-      if (isset($form['movie'])) {
-        $path = Storage::disk('s3')->putFile('/',$form['movie'],'public');
-        $app->movie = Storage::disk('s3')->url($path);
+      if (isset($form['movie_path'])) {
+        $path = Storage::disk('s3')->putFile('/',$form['movie_path'],'public');
+        $app->movie_path = Storage::disk('s3')->url($path);
       } else {
-          $app->movie = null;
+          $app->movie_path = null;
       }
 
 
@@ -48,7 +48,7 @@ class MyAppController extends Controller
       // フォームから送信されてきたimageを削除する
       unset($form['image']);
       // movie //
-      // unset($form['movie']);
+      unset($form['movie_path']);
 
       // データベースに保存する
       $app->fill($form);
@@ -106,15 +106,16 @@ class MyAppController extends Controller
       $app_form = $request->all();
       if (isset($app_form['movie'])) {
         $path = $request->file('movie')->store('public/image');
-        $app->movie = basename($path);
+        $app->movie_path = basename($path);
         unset($app_form['movie']);
       } elseif (0 == strcmp($request->remove, 'true')) {
-        $app->movie = null;
+        $app->movie_path = null;
       }
 
       unset($app_form['_token']);
-      unset($app_form['remove']);
-
+      unset($app_form['remove-image']);
+      unset($app_form['remove-movie']);
+      
       // 該当するデータを上書きして保存する
       $app->fill($app_form)->save();
       // 以下を追記
