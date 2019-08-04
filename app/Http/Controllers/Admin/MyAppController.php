@@ -105,9 +105,9 @@ class MyAppController extends Controller
       // // 送信されてきたフォームデータを格納する
       $app_form = $request->all();
       if (isset($app_form['movie'])) {
-        $path = $request->file('movie')->store('public/movie');
+        $path = $request->file('movie')->store('public/image');
         $app->movie = basename($path);
-        unset($app_form['image']);
+        unset($app_form['movie']);
       } elseif (0 == strcmp($request->remove, 'true')) {
         $app->movie = null;
       }
