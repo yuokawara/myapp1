@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <!-- movie -->
-                    <!-- <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-md-2" for="image">動画</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
@@ -54,7 +54,7 @@
                                 </label>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-10">
                             <input type="hidden" name="id" value="{{ $app_form->id }}">

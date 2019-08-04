@@ -19,7 +19,7 @@
                             </div>
                             <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
 
-                        <div class="movie col-md-12 mt-4">
+                        <div class="movie col-md-6 mt-4">
                           <tbody>
                               @foreach($posts as $app)
                                   <tr>
@@ -71,9 +71,9 @@
                                 @foreach($posts as $app)
                                     <tr>
                                         <td><video id="mv-{{$app->id}}" class="col-6" autobuffer>
-                                          <source src="/video/dog.ogv" type="video/ogg">
-                                            <source src="/video/dog.webm" type="video/webm">
-                                              <source src="/video/dog.mp4" type="video/mp4">
+                                          <source src="{{$app->image_path}}" type="video/ogg">
+                                            <source src="{{$app->image_path}}" type="video/webm">
+                                              <source src="{{$app->image_path}}" type="video/mp4">
                                               <p>HTML5に対応していません。</p>
                                             </video>
                                             <form>
