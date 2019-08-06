@@ -27,9 +27,9 @@
                                       <!-- source要素の場合 -->
                                       <video controls>
                                       	<!-- source要素が先頭 -->
-                                      	<source src="{{ $headline->movie_path }}.ogv" type="video/ogg">
-                                      	<source src="{{ $headline->movie_path }}.webm" type="video/webm">
-                                      	<source src="{{ $headline->movie_path }}.mp4" type="video/mp4">
+                                      	<source src="{{ $headline->movie_path }}.ogv"></source>
+                                      	<source src="{{ $headline->movie_path }}.webm"></source>
+                                      	<source src="{{ $headline->movie_path }}.mp4"></source>
 
                                       	<!-- 要素の最後にフォールバックコンテンツを配置 -->
                                       	<p>お使いのブラウザでは動画再生に対応していません…。</p>
