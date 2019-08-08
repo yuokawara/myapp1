@@ -45,30 +45,8 @@
                                     <td>{{ str_limit($app->title, 100) }}</td>
                                     <td>{{ str_limit($app->body, 250) }}</td>
 
-                                    <td><video id="mv-{{$app->id}}" class="col-6" autobuffer>
-                                      <source src="movie/dog.mov">
-                                        <source src="movie/dog.ogv">
-                                          <p>HTML5に対応していません。</p>
-                                        </video>
-                                        <form>
-                                          <button type ="button" onclick="movplay(0)">再生</button>
-                                          <button type="button" onclick="movplay(1)">一時停止</button>
-                                        </form>
-                                      <script>
-                                        function movplay(num)
-                                        {
-                                          var obj = document.getElementById("mv-{{$app->id}}");
-                                          var n = parseInt(num);
-                                          if ( n == 0 )
-                                          {
-                                            obj.play();
-                                          }
-                                          else
-                                          {
-                                            obj.pause();
-                                          }
-                                        }
-                                      </script>
+                                    <td>
+                                      <video src="{{$app->movie_path}}" type="video/mp4" controls autoplay muted></video>
                                     </td>
                                     <td>
                                         <div>

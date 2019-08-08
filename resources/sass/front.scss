@@ -3,10 +3,15 @@ body {
   background-color: #e6c289;
 }
 video {
-				width: 600px ;
-				max-width: 80% ;
-        background-color: #efefef;
-			}
+	max-width: 50%;
+  background-color: #efefef;
+}
+.container {
+  background-color: #847593;
+}
+.row {
+  background-color: #333333;
+}
 .navbar-laravel {
   display: none;
 }
@@ -15,6 +20,7 @@ video {
 }
 .image {
   background-color: #efefef;
+
 }
 
 .header {
@@ -27,17 +33,20 @@ video {
 .headline {
   .caption {
     position: relative;
-    width: 350px;
+    width: 400px;
     .image {
       img {
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
       }
     }
+
     .title {
       width: 100%;
       position: absolute;
       bottom: 0;
       left: 0;
+      text-align: center;
       background-color: rgba(0, 0, 0, 0.6);
       h1 {
         color: #efefef;
@@ -48,7 +57,13 @@ video {
       font-size: 0.8em;
     }
   }
-}
+  }
+  .movie {
+    .video{
+      width: 150%;
+      margin: 0 auto;
+    }
+  }
 
 .posts {
   .post {
