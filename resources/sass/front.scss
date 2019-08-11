@@ -2,9 +2,8 @@ body {
   color: #000;
   background-color: #e6c289;
 }
-video {
-	max-width: 50%;
-  background-color: #efefef;
+card-img-top {
+  width: 100%;
 }
 .container {
   background-color: #847593;
@@ -60,8 +59,7 @@ video {
   }
   .movie {
     .video{
-      width: 150%;
-      margin: 0 auto;
+      width: 80%;
     }
   }
 

@@ -5,43 +5,86 @@
         <hr color="#c0c0c0">
           @if (!is_null($headline))
             <div class="row">
-              <div class="headline col-sm-4 mt-4">
-                <div class="caption mx-auto">
-                  <div class="image" style="display: table; margin: 0 auto;">
-                    @if ($headline->image_path)
-                      <img src="{{ $headline->image_path }}">
-                    @endif
-                  </div>
-                    <div class="title p-2">
-                      <h1>{{ str_limit($headline->title, 70) }}</h1>
-                    </div>
+              <!--- Cards -->
+              <div class="container-fluid padding">
+                <div class="row padding">
+	                 <div class="col-md-6">
+		                <div class="card">
+                      @if ($headline->image_path)
+			                 <img class="card-img-top" src="{{ $headline->image_path }}">
+                      @endif
+			                  <div class="card-body">
+				                 <h4>{{ str_limit($headline->title, 70) }}</h4>
+				                  <p class="card-text">{{ str_limit($headline->body, 300) }}</p>
+				                   <a href="#" class="btn btn-outline-secondary">SEE SAMPLE</a>
+			                  </div>
+		                </div>
+	                 </div>
+
+	                 <div class="col-md-6">
+		                <div class="card">
+                    @foreach($posts as $app)
+			               <video class="card-img-top" src="{{$headline->movie_path}}" type="video/mp4" controls autoplay muted></video>
+                    @endforeach
+			                <div class="card-body">
+				               <h4 class="card-title">SAMPLE</h4>
+				                <p class="card-text">samplesamplesample</p>
+				                 <a href="#" class="btn btn-outline-secondary">SEE SAMPLE</a>
+			                </div>
+		                </div>
+	                 </div>
                 </div>
-                  <p class="body mx-auto">{{ str_limit($headline->body, 300) }}</p>
-              </div>
-
-
-              <div class="movie col-lg-6 mx-auto">
-                <tbody>
-                  @foreach($posts as $app)
-                    <tr>
-                      <td>
-                        <div class="video mt-4">
-                          <video src="{{$headline->movie_path}}" type="video/mp4" controls autoplay muted></video>
-                          <!-- 要素の最後にフォールバックコンテンツを配置 -->
-                          <!-- <p>お使いのブラウザでは動画再生に対応していません…。</p> -->
-                        </div>
-                      </td>
-                    </tr>
-                  @endforeach
-                </tbody>
               </div>
             </div>
           @endif
+
+        <hr color="#c0c0c0">
+
+      <div class="container-fluid padding">
+        @foreach($posts as $post)
+          <div class="row padding">
+	          <div class="col-md-4">
+		         <div class="card">
+              @if ($post->image_path)
+			         <img class="card-img-top" src="{{ $post->image_path }}">
+			          <div class="card-body">
+				         <h4>{{ str_limit($post->title, 70) }}</h4>
+				         <p class="card-text">{{ str_limit($post->body, 650) }}</p>
+				         <a href="#" class="btn btn-outline-secondary">SEE SAMPLE</a>
+			          </div>
+              @endif
+		         </div>
+	          </div>
+
+	        <div class="col-md-4">
+		       <div class="card">
+            @foreach($posts as $app)
+			       <video class="card-img-top" src="{{$app->movie_path}}" type="video/mp4" controls autoplay muted></video>
+			        <div class="card-body">
+				       <h4 class="card-title">SAMPLE</h4>
+				       <p class="card-text">samplesamplesample</p>
+				       <a href="#" class="btn btn-outline-secondary">SEE SAMPLE</a>
+			        </div>
+            @endforeach
+		       </div>
+	        </div>
+
+	          <div class="col-md-4">
+		         <div class="card">
+			        <img class="card-img-top" src="img/main.png">
+			         <div class="card-body">
+				        <h4 class="card-title">SAMPLE</h4>
+				         <p class="card-text">samplesamplesample</p>
+				         <a href="#" class="btn btn-outline-secondary">SEE SAMPLE</a>
+			         </div>
+		         </div>
+	          </div>
+          </div>
+        @endforeach
       </div>
 
 
-        <hr color="#c0c0c0">
-        <div class="row">
+        <!-- <div class="row">
             <div class="posts col-md-4 mx-auto mt-3">
                 @foreach($posts as $post)
                     <div class="post">
@@ -81,5 +124,5 @@
             </div>
         </div>
     </div>
-    </div>
+    </div> -->
 @endsection
