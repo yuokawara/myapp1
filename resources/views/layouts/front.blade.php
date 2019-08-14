@@ -26,7 +26,7 @@
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('css/front.css') }}" rel="stylesheet">
         <!-- オリジナルアプリ用 -->
-        <!-- <link href="{{ asset('css/edit.css') }}" rel="stylesheet"> -->
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -58,6 +58,24 @@
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
+            <footer>
+		<div id="contact" class="offset">
+
+				<div class="row justify-content-center">
+					<div class="col-md-5 text-center">
+						<!-- ここにイメージタグ　-->
+						<p>お問い合わせはこちらから</p>
+						<strong>Contact Info</strong>
+						<p>000-0000-0000<br>email@samplemk.com</p>
+
+					</div>
+
+					<hr class="socket">
+					&copy; YU ORANGE.
+
+				</div>
+		</div>
+</footer>
         </div>
     </body>
 </html>

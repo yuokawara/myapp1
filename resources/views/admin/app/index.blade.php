@@ -46,7 +46,9 @@
                                     <td>{{ str_limit($app->body, 250) }}</td>
 
                                     <td>
-                                      <video src="{{$app->movie_path}}" type="video/mp4" controls autoplay muted></video>
+                                      <div class="edit-movie">
+                                        <video src="{{$app->movie_path}}" type="video/mp4" controls autoplay muted></video>
+                                      </div>
                                     </td>
                                     <td>
                                         <div>

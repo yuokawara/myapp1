@@ -67,7 +67,18 @@ class MyAppController extends Controller
             // それ以外はすべての投稿を取得する
             $posts = App::all();
         }
-        return view('admin.app.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        $sliders = array();
+        foreach ($posts as $post){
+          if($n < 3){
+            $sliders[]=$post;
+
+          } else {
+            break;
+          }
+        }
+
+
+        return view('admin.app.index', ['posts' => $posts, 'cond_title' => $cond_title, 'sliders' => $sliders]);
     }
     // 以下を追記
 

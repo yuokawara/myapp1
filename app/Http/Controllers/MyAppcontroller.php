@@ -25,9 +25,19 @@ class MyAppController extends Controller
         } else {
             $headline = null;
         }
+        $sliders = array();
+        $n = 0;
+        foreach ($posts as $post){
+          if($n < 3){
+            $sliders[]=$post;
 
+          } else {
+            break;
+          }
+          $n++;
+        }
         // news/index.blade.php ファイルを渡している
         // また View テンプレートに headline、 posts、 cond_title という変数を渡している
-        return view('app.index', ['headline' => $headline, 'posts' => $posts, 'cond_title' => $cond_title]);
+        return view('app.index', ['headline' => $headline, 'posts' => $posts, 'cond_title' => $cond_title, 'sliders' => $sliders]);
     }
 }

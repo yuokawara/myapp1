@@ -38,3 +38,11 @@ body {
 .login-body {
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+.edit-movie video {
+  height: 150px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border: 2px solid #f00;
+}

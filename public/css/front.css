@@ -3,9 +3,15 @@ body {
   background-color: #e6c289;
 }
 
-video {
-  max-width: 50%;
-  background-color: #efefef;
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .container {
@@ -20,67 +26,51 @@ video {
   display: none;
 }
 
-.movie {
+.card-img-top {
   background-color: #efefef;
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .image {
   background-color: #efefef;
 }
 
-.header .logo {
-  width: 120px;
-  height: 82px;
+.col-md-4 .card .card-img-top {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.headline .caption {
-  position: relative;
-  width: 400px;
+footer {
+  background-color: #40474e;
+  color: white;
+  padding: 2rem 0 2rem;
 }
 
-.headline .caption .image img {
-  width: 80%;
-  margin: 0 auto;
+footer a {
+  color: white;
 }
 
-.headline .caption .title {
+footer svg.svg-inline--fa {
+  font-size: 1.6rem;
+  margin: 1.2rem 0.5rem 0 0;
+}
+
+footer svg.svg-inline--fa:hover {
+  color: #1ebba3 !important;
+}
+
+hr.socket {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.headline .caption .title h1 {
-  color: #efefef;
-  font-size: 1.2em;
-}
-
-.headline .caption .body {
-  font-size: 0.8em;
-}
-
-.movie .video {
-  width: 150%;
-  margin: 0 auto;
-}
-
-.posts .post .date {
-  font-size: 0.6em;
-  color: #efefef;
-}
-
-.posts .post .title {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.posts .post .body {
-  font-size: 0.8em;
-}
-
-.posts .post .image img {
-  width: 150px;
+  border-top: 0.2rem solid #666b71;
+  margin-top: 3rem;
 }
 
