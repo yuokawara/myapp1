@@ -1,13 +1,14 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
-  color: #fff;
+  background-color: #efefef;
+  color: #333333;
 }
 
 .navbar-laravel {
   background-color: #000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  display: none;
 }
 
 .navbar-brand {
@@ -45,6 +46,5 @@ body {
   max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 2px solid #f00;
 }
 

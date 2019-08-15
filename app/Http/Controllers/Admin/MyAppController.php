@@ -69,7 +69,7 @@ class MyAppController extends Controller
         }
         $sliders = array();
         foreach ($posts as $post){
-          if($n < 3){
+          if($sliders < 3){
             $sliders[]=$post;
 
           } else {

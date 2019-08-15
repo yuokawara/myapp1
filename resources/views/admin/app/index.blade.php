@@ -33,8 +33,8 @@
                             <tr>
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
-                                <th width="30%">本文</th>
-                                <th width="30%">動画</th>
+                                <th width="20%">本文</th>
+                                <th width="20%">動画</th>
                                 <th width="10%">操作</th>
                             </tr>
                         </thead>
@@ -42,9 +42,8 @@
                             @foreach($posts as $app)
                                 <tr>
                                     <th>{{ $app->id }}</th>
-                                    <td>{{ str_limit($app->title, 100) }}</td>
-                                    <td>{{ str_limit($app->body, 250) }}</td>
-
+                                    <td>{{ str_limit($app->title, 50) }}</td>
+                                    <td>{{ str_limit($app->body, 50) }}</td>
                                     <td>
                                       <div class="edit-movie">
                                         <video src="{{$app->movie_path}}" type="video/mp4" controls autoplay muted></video>
