@@ -136,8 +136,8 @@
                 <div class="row justify-content-center">
                   <div class="col-md-5 text-center">
                     <!-- ここにイメージタグ　-->
-                    <p>お問い合わせはこちらから</p>
-                    <strong>Contact Info</strong>
+
+                    
                     <p>000-0000-0000<br>email@samplemk.com</p>
 
                   </div>
