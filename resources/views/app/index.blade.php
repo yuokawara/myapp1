@@ -3,25 +3,25 @@
 @section('content')
 <!-- Navigasion -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-	data-target="#navbarResponsive">
+  <a class="navbar-brand" href="#"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#home">Home</a>
+				<a class="nav-link" href="{{ action('MyAppController@index') }}"><span class="font">H</span>ome</a>
 			</li>
 
 			<li class="nav-item">
-				<a class="nav-link" href="{{ action('Admin\MyAppController@create') }}">Create</a>
+				<a class="nav-link" href="{{ action('Admin\MyAppController@create') }}"><span class="font">C</span>reate</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{ action('Admin\MyAppController@index') }}">Edit</a>
+				<a class="nav-link" href="{{ action('Admin\MyAppController@index') }}"><span class="font">E</span>dit</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{ action('HomeController@index') }}">Register</a>
+				<a class="nav-link" href="{{ action('HomeController@index') }}"><span class="font">R</span>egister</a>
 			</li>
 		</ul>
 	</div>
@@ -66,7 +66,7 @@
             <img class="card-img-top" src="{{ $headline->image_path }}">
             @endif
             <div class="card-body">
-              <h4>{{ str_limit($headline->title, 70) }}</h4>
+              <h4 class="text-center">{{ str_limit($headline->title, 70) }}</h4>
               <p class="card-text">{{ str_limit($headline->body, 300) }}</p>
             </div>
           </div>
@@ -78,8 +78,11 @@
             <video class="card-img-top" src="{{$headline->movie_path}}" type="video/mp4" controls autoplay muted></video>
             @endif
             <div class="card-body">
-              <h4>{{ str_limit($headline->title, 70) }}</h4>
-              <p class="card-text">{{ str_limit($headline->body, 300) }}</p>
+              <div class="date text-center">
+                {{ $headline->updated_at->format('Y年m月d日') }}
+              </div>
+              <!-- <h4 class="text-center">{{ str_limit($headline->title, 70) }}</h4>
+              <p class="card-text">{{ str_limit($headline->body, 300) }}</p> -->
             </div>
           </div>
         </div>
@@ -101,7 +104,7 @@
             @if ($post->image_path)
             <img class="card-img-top" src="{{ $post->image_path }}">
             <div class="card-body">
-              <h4>{{ str_limit($post->title, 70) }}</h4>
+              <h4 class="text-center">{{ str_limit($post->title, 70) }}</h4>
               <p class="card-text">{{ str_limit($post->body, 650) }}</p>
               <a href="{{ action('Admin\MyAppController@index') }}" class="btn btn-outline-secondary">編集に戻る</a>
             </div>
@@ -114,7 +117,7 @@
             @if ($post->movie_path)
             <video class="card-img-top" src="{{$post->movie_path}}" type="video/mp4" controls autoplay muted></video>
             <div class="card-body">
-              <div class="date">
+              <div class="date text-center">
                 {{ $post->updated_at->format('Y年m月d日') }}
               </div>
               <!-- <h4>{{ str_limit($post->title, 70) }}</h4>

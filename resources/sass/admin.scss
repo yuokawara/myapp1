@@ -2,7 +2,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #efefef;
-  color: #333333;
+  color: #efefef;
+  background: linear-gradient(to top, rgba(65, 62, 65, 0.7) 0%, rgba(73, 76, 77, 0.7) 100%),url(../../img/travel-create.jpg);
 }
 
 .navbar-laravel {
@@ -29,15 +30,16 @@ body {
 }
 
 .login-box {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #efefef;
+  color: #333333;
 }
 
 .login-header {
-  background-color: rgba(0, 0, 0, 0.25)
+  background-color: #efefef;
 }
 
 .login-body {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #efefef;
 }
 
 // 投稿編集 //
