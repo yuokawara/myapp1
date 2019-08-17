@@ -67,7 +67,7 @@
             @endif
             <div class="card-body">
               <h4 class="text-center">{{ str_limit($headline->title, 70) }}</h4>
-              <p class="card-text">{{ str_limit($headline->body, 300) }}</p>
+              <p class="card-text text-center">{{ str_limit($headline->body, 150) }}</p>
             </div>
           </div>
         </div>
@@ -105,8 +105,10 @@
             <img class="card-img-top" src="{{ $post->image_path }}">
             <div class="card-body">
               <h4 class="text-center">{{ str_limit($post->title, 70) }}</h4>
-              <p class="card-text">{{ str_limit($post->body, 650) }}</p>
+              <p class="card-text text-center">{{ str_limit($post->body, 150) }}</p>
+              <div class="buttons">
               <a href="{{ action('Admin\MyAppController@index') }}" class="btn btn-outline-secondary">編集に戻る</a>
+              </div>
             </div>
             @endif
           </div>

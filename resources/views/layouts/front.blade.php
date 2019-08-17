@@ -65,11 +65,11 @@
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="text-center">
-              <h2><span class="font-weight-bold">Contact</span> Us</h2>
+              <h2><span class="font-weight-bold">Contact</span></h2>
             </div>
           </div>
         </div>
-        
+
 
         <!-- START CONTACT -->
         <div class="row mt-5">
