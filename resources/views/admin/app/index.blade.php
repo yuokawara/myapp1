@@ -8,7 +8,9 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+              <div class="buttons">
                 <a href="{{ action('Admin\MyAppController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+              </div>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('Admin\MyAppController@index') }}" method="get">
@@ -19,7 +21,9 @@
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="検索">
+                            <div class="buttons">
+                              <input type="submit" class="btn btn-primary" value="検索">
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -28,15 +32,16 @@
         <div class="row">
             <div class="admin-app col-md-12 mx-auto">
                 <div class="row">
+                  <div class="table">
                     <table class="table table-dark">
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
+                                <th width="10%">タイトル</th>
                                 <th width="20%">本文</th>
                                 <th width="20%">画像</th>
                                 <th width="20%">動画</th>
-                                <th width="20%">操作</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,6 +72,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                  </div>
                 </div>
             </div>
         </div>
