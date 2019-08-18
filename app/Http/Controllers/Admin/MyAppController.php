@@ -8,7 +8,7 @@ use App\App;
 use App\AppHistory;
 use Carbon\Carbon;
 use Storage;
-
+use Illuminate\Support\Facades\Log;
 
 class MyAppController extends Controller
 {
@@ -101,26 +101,32 @@ class MyAppController extends Controller
       $app = App::find($request->id);
       // 送信されてきたフォームデータを格納する
       $app_form = $request->all();
+
       if (isset($app_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $app->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$app_form['image'],'public');
+        $app->image_path = Storage::disk('s3')->url($path);
         unset($app_form['image']);
-      } elseif (0 == strcmp($request->remove, 'true')) {
+      } elseif (
+        isset($app_form['remove-image'])
+        && $app_form['remove-image'] === 'true'
+      ) {
         $app->image_path = null;
       }
       // movie用
       // Validationをかける
       $this->validate($request, App::$rules);
-      // // App Modelからデータを取得する
-      $app = App::find($request->id);
-      // // 送信されてきたフォームデータを格納する
-      $app_form = $request->all();
+
       if (isset($app_form['movie'])) {
-        $path = $request->file('movie')->store('public/image');
-        $app->movie_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$app_form['movie'],'public');
+        $app->movie_path = Storage::disk('s3')->url($path);
         unset($app_form['movie']);
-      } elseif (0 == strcmp($request->remove, 'true')) {
+      } elseif (
+        isset($app_form['remove-movie'])
+        && $app_form['remove-movie'] === 'true'
+      ) {
         $app->movie_path = null;
+
+
       }
 
       unset($app_form['_token']);
