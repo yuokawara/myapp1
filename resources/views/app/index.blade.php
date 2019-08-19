@@ -51,6 +51,7 @@
     </div>
     @endforeach
   </div>
+  @endif
 </div>
 <!-- carousel end -->
 
