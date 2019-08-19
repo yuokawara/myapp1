@@ -30,6 +30,7 @@
 <!-- End Navigation -->
 <!-- carousel -->
 <div id="slides" class="carousel slide" data-ride="carousel">
+  @if (!is_null($headline))
   <ul class="carousel-indicators">
     @foreach ($sliders as $slider)
     <li data-target="#slides" data-slide-to="{{$slider->id}}" class="active"></li>
