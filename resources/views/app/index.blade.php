@@ -41,8 +41,6 @@
       <img src="{{ $headline->image_path }}">
       <div class="carousel-caption">
         <h1 class="display-2"><span class="font">M</span>y <span class="font">V</span>log <span class="font">C</span>reater</h1>
-
-        <button type="button" class="btn btn-outline-light btn-lg"><span class="font">S</span>tart <span class="font">C</span>reate</button>
       </div>
     </div>
     @foreach ($sliders as $slider)
