@@ -161,7 +161,7 @@ hr.socket {
 
 @media (max-width: 576px) {
   .carousel-caption {
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
   }
 
