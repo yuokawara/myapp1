@@ -21,6 +21,6 @@
   </div>
 </div>
 <div class="row justify-content-center mt-4">
-  <a href="{{ action('MyAppController@index') }}" class="btn btn-primary">Home</a>
+  <a href="{{ action('Admin\MyAppController@create') }}" class="btn btn-primary">Start</a>
 </div>
 @endsection
