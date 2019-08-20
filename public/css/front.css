@@ -159,3 +159,36 @@ hr.socket {
   }
 }
 
+@media (max-width: 576px) {
+  .carousel-caption {
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-caption h1 {
+    font-size: 250%;
+  }
+
+  .carousel-caption h3 {
+    font-size: 110%;
+  }
+
+  .carousel-caption .btn {
+    font-size: 90%;
+    padding: 4px 8px;
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .display-4 {
+    font-size: 160%;
+  }
+
+  .social a {
+    font-size: 2em;
+    padding: 0.7rem;
+  }
+}
+
