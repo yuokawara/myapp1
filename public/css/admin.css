@@ -43,6 +43,15 @@ body {
   background-color: #efefef;
 }
 
+.buttons {
+  font-family: monospace;
+  margin-top: 0.5rem;
+}
+
+.font {
+  color: #f00;
+}
+
 .edit-movie video {
   height: 150px;
   max-width: 100%;

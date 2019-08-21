@@ -54,7 +54,7 @@ class MyAppController extends Controller
       $app->fill($form);
       $app->save();
 
-      return redirect('admin/app/create');
+      return redirect('admin');
   }
   // 以下を追記
     public function index(Request $request)

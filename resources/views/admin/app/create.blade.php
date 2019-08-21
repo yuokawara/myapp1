@@ -42,6 +42,11 @@
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
                 </form>
+                <div class="buttons">
+                <a href="{{ action('MyAppController@index') }}" class="btn btn-lg btn-success">
+                  <span class="font">H</span>ome
+                </a>
+                </div>
             </div>
         </div>
     </div>
