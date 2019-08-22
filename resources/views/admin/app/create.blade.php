@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'マイアプリの新規作成')
+@section('title', '新規作成')
 
 @section('content')
     <div class="container">

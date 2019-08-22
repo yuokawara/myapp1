@@ -40,7 +40,7 @@
     <div class="carousel-item active">
       <img src="{{ $headline->image_path }}">
       <div class="carousel-caption">
-        <h1 class="display-2"><span class="font">M</span>y <span class="font">V</span>log <span class="font">C</span>reater</h1>
+        <h1 class="display-2"><span class="font">M</span>y <span class="font">V</span>log <span class="font">C</span>reator</h1>
       </div>
     </div>
     @foreach ($sliders as $slider)
