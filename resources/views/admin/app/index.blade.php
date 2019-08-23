@@ -76,5 +76,10 @@
                 </div>
             </div>
         </div>
+        <div class="buttons">
+        <a href="{{ action('MyAppController@index') }}" class="btn btn-block btn-primary">
+          <span class="font">H</span>ome
+        </a>
+        </div>
     </div>
 @endsection
